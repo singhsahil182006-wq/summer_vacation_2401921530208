@@ -1,0 +1,17 @@
+class Solution {
+public:
+    TreeNode* searchBST(TreeNode* root, int val) {
+        int temp;
+        if(root==NULL){
+            return 0;
+        }
+        if(val==root->val){
+            return root;
+        }
+        if(root->val>val)
+        {
+            return searchBST(root->left,val);
+        }
+        return searchBST(root->right,val);
+    }
+};
